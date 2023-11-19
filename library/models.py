@@ -31,6 +31,10 @@ class Author(models.Model):
     biography = models.TextField()
 
 
+    def __str__(self):
+        return self.name
+
+
 class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
