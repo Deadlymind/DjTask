@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+from taggit.managers import TaggableManager
 
 # Create your models here.
 
@@ -29,6 +31,9 @@ class Author(models.Model):                 # Define the Author model, represent
     name = models.CharField(max_length=100) # Character field for author's name, max length 100
     birth_date = models.DateField()         # Date field for author's birth date
     biography = models.TextField()          # Text field for author's biography
+
+
+    tags = TaggableManager()
 
     def __str__(self):                      # Special method for string representation of the Author instance
         return self.name                    # Return author's name when Author instance is printed
