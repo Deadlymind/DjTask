@@ -34,6 +34,8 @@ class Author(models.Model):                 # Define the Author model, represent
 
 
     tags = TaggableManager()
+    image = models.ImageField(upload_to='library')
+    
 
     def __str__(self):                      # Special method for string representation of the Author instance
         return self.name                    # Return author's name when Author instance is printed
