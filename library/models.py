@@ -27,16 +27,13 @@ ToDo:
 
 """
 
-from django.db import models
-from taggit.managers import TaggableManager
-
 class Author(models.Model):                         # Define the Author model, representing authors in the database
     name = models.CharField(max_length=100)         # Character field for author's name, max length 100
     birth_date = models.DateField()                 # Date field for author's birth date
     biography = models.TextField()                  # Text field for author's biography
     tags = TaggableManager()                        # Tags for the author
     image = models.ImageField(upload_to='library')  # Image field for author's image
-    # books = models.ManyToManyField('Book', related_name='authors')  # Add this line
+    # books = models.ManyToManyField('Book', related_name='authors')  # this line make error waiting to resolve it
 
 
     def __str__(self):                              # Special method for string representation of the Author instance
